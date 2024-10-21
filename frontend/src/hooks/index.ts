@@ -29,7 +29,7 @@ export const useBlogs = () => {
         setLoading(false);
       });
   }, []);
-  console.log(blogs);
+  
   return {
     loading,
     blogs,
@@ -39,8 +39,6 @@ export const useBlogs = () => {
 export const useBlogbyid = ({ id }: any) => {
   const [loading, setLoading] = useState(true);
   const [blog, setBlog] = useState<Blog>();
-  console.log(id);
-  console.log("i am in useBlogbyid");
   useEffect(() => {
     axios
       .get(`${BACKEND_URL}api/v1/blog/${id.id}`, {
@@ -50,12 +48,12 @@ export const useBlogbyid = ({ id }: any) => {
         },
       })
       .then((responce) => {
-        console.log(responce.data.blog);
+        
         setBlog(responce.data.blog);
         setLoading(false);
       });
   }, [id]);
-  console.log("Ganesh Sharma", blog);
+  
   return {
     loading,
     blog,
