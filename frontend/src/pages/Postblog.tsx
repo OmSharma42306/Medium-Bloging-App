@@ -7,8 +7,7 @@ export const Postblog = () => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const navigate = useNavigate();
-  console.log(title);
-  console.log(content);
+ 
 
   return (
     <div>
